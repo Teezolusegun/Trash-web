@@ -1,51 +1,66 @@
 import React, { Component } from "react";
 import "../App.css";
 import Footer from "./Footer";
+import Header from "./Header";
 
 class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: "" };
+  state = { value: "" };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
+  onClick(event) {
+    const url = "http://localhost:4000/user/Home2";
+    if (this.state == event.target.value) {
+    }
   }
 
   handleSubmit(event) {
-    alert("Thanks for the info:Welcome  " + this.state.value);
+    alert("Welcome");
     event.preventDefault();
   }
 
   render() {
     return (
-      <div className="signIn">
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            FullName:
+      <div>
+        <Header title="SignIn/Login" />
+
+        <div className="signIn">
+          <form onSubmit={this.handleSubmit}>
+            FULLNAME/COMPANY NAME:
             <input
               type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
+              class="btn btn-primary btn-lg"
+              // value={this.state.value}
+              // onChange={this.handleChange}
             />
+            <br />
+            <br />
             Address:
+            <input type="text" />
+            <br />
+            <br />
+            EMAIL:
+            <input type="text"  />
+            <br />
+            <br />
+            PHONENUMBER:
+            <input type="number"  />
+            <br />
+            <br />
+            PASSWORD:
             <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
+              type="password"
+              style={{
+                padding: "15px",
+                backgroundColor: "teal",
+                borderRadius: "20px"
+              }}
             />
-            Email:
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+            <br />
+            <br />
+            <button onHandleSubmit={this.handleSubmit} onClick={this.onClick}>
+              SUBMIT
+            </button>
+          </form>
+        </div>
         <Footer />
       </div>
     );

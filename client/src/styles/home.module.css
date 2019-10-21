@@ -1,0 +1,47 @@
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.street {
+  display: block;
+  border-radius: 20px;
+  width: 780px;
+  height: 20rem;
+  animation: street1 20s 3;
+  background-image: url("../assets/trashlogo.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 20px;
+  z-index: 0;
+}
+@keyframes street1 {
+  40% {
+    background-image: url("../assets/office.jpg");
+  }
+  60% {
+    background-image: url("../assets/cleanstreet.jpg");
+  }
+  80% {
+    background-image: url("../assets/dirtystreet.jpg");
+  }
+  /* 80% {
+      background-image: url("./assets//yabmastaff.jpg");
+    }
+    100% {
+      background-image: url("./assets/yabma1.png");
+    } */
+}
+.writ {
+  animation: color-me-in 5s;
+}
+@keyframes color-me-in {
+  /* You could think of as "step 1" */
+  0% {
+    background: orange;
+  }
+  /* You could think of as "step 2" */
+  100% {
+    background: black;
+  }
+}

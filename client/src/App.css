@@ -1,29 +1,42 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+.signUp {
+  overflow: scroll;
+  justify-content: "center";
+  align-content: "center";
+  align-items: "center";
 }
 
 .signIn {
+  background: khaki;
   display: flex;
-  /* flex-direction: column; */
-  align-content: center;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.Career {
+  background: khaki;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 59px;
+}
+.street {
+  width: 780px;
+  height: 20rem;
+  animation: street1 20s infinite;
+  /* background-image: url("./assets/street.png"); */
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+@keyframes street1 {
+  33% {
+    background-image: url("./assets/dirtystreet.jpg");
+  }
+  95% {
+    background-image: url("./assets/cleanstreet.jpg");
+  }
+  100% {
+    background-image: url("./assets/office.jpg");
+  }
 }

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import headStyles from "../styles/footer.module.css";
 
 class Footer extends Component {
   render() {
     return (
-      <div>
-        <div className="Ontopme">
+      <div className={headStyles.footerContainer}>
+        <div className={headStyles.footerContainer2}>
           <h1>TrashIt: Your No. 1 garbage Destination</h1>
           <p>
             TrashIt is your number one online garbage site in Nigeria. We are an
@@ -16,16 +17,14 @@ class Footer extends Component {
             is cancelled 48hrs before the appointed time. we are committed to
             make our environment greener, more welcoming and making your home
             free of garbages and unwanted items that clusters our space. You can
-            also make stress free payments online.{" "}
+            also make stress free payments online. what garbage do you want to
+            get rid of. We are just clicks away
           </p>
-          <p>what garbage do you want to get rid of. we are just clicks away</p>
         </div>
-
-        <br />
-        <h8>
+        <h5>
           Subscribe to our communications to receive special offers and latest
           news
-        </h8>
+        </h5>
       </div>
     );
   }
