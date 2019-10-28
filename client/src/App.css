@@ -1,12 +1,16 @@
-.signUp {
+.signUpContainer {
   overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: "center";
   align-content: "center";
   align-items: "center";
+  padding-left: 40%;
 }
 
 .signIn {
   background: khaki;
+  overflow: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,22 +25,64 @@
   flex-wrap: wrap;
   margin: 59px;
 }
-.street {
+/* .street {
+  width: 100%;
+  height: 100%;
+  animation: street1 20s infinite;
+  /* background-image: url("./assets/street.png"); */
+/* background-repeat: no-repeat;
+  background-size: 100%;
+}
+@keyframes street1 {
+  50% {
+    background-image: url("./assets/dirtystreet2.jpg");
+  }
+  100% {
+    background-image: url("./assets/dirtystreet.jpg");
+  }
+}
+
+.street2 {
   width: 780px;
   height: 20rem;
   animation: street1 20s infinite;
   /* background-image: url("./assets/street.png"); */
-  background-repeat: no-repeat;
+/* background-repeat: no-repeat;
   background-size: 100%;
-}
-@keyframes street1 {
-  33% {
-    background-image: url("./assets/dirtystreet.jpg");
+} */
+/* @keyframes street2 {
+  10% {
+    background-image: url("./assets/cleanstreet2.jpg");
   }
-  95% {
+  53% {
     background-image: url("./assets/cleanstreet.jpg");
   }
   100% {
     background-image: url("./assets/office.jpg");
   }
+}  */
+
+.input {
+  padding: 15px;
+  border-radius: 25px;
+  width: 400px;
+}
+.inputButton {
+  margin-left: 40%;
+  padding: 15px;
+  background-color: orange;
+  border-radius: 15px;
+}
+.btn1 {
+  padding: 15px;
+  background-color: orange;
+  width: 28;
+}
+.btn2 {
+  padding: 10px;
+  background-color: #a0ced9;
+}
+.signUp {
+  width: 100%;
+  padding: 10px;
 }

@@ -6,21 +6,20 @@ import Button from "react-bootstrap/Button";
 class Button2 extends Component {
   render() {
     return (
-      <div style={{ position: "space-inbetween" }}>
+      <div style={{ position: "space-between" }}>
         <Link to="/signIn">
-          {/* <button style={{ padding: "15px", borderRadius: "25px" }}>
-            Sign In
-          </button> */}
           <Button variant="primary" size="lg" active>
             Sign In
           </Button>
         </Link>
 
         <Link to="/signUp">
-          {/* <button style={{ padding: "15px", borderRadius: "25px" }}>
-            Sign Up
-          </button> */}
-          <Button variant="primary" size="lg" active>
+          <Button
+            style={{ marginLeft: "5px" }}
+            variant="primary"
+            size="lg"
+            active
+          >
             Sign Up
           </Button>
         </Link>

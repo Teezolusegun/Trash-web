@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import "../App.css";
 import Footer from "./Footer";
 import Header from "./Header";
+import buttonStyles from "../styles/button.module.css";
 
 class SignIn extends React.Component {
   state = { value: "" };
 
   onClick(event) {
     const url = "http://localhost:4000/user/Home2";
+    const { fullName, password, phoneNumber, email } = this.state;
+    const namebrk = fullName.split(" ");
     if (this.state == event.target.value) {
     }
   }
@@ -24,39 +27,57 @@ class SignIn extends React.Component {
 
         <div className="signIn">
           <form onSubmit={this.handleSubmit}>
-            FULLNAME/COMPANY NAME:
-            <input
-              type="text"
-              class="btn btn-primary btn-lg"
-              // value={this.state.value}
-              // onChange={this.handleChange}
-            />
-            <br />
-            <br />
-            Address:
-            <input type="text" />
-            <br />
-            <br />
-            EMAIL:
-            <input type="text"  />
-            <br />
-            <br />
-            PHONENUMBER:
-            <input type="number"  />
-            <br />
-            <br />
-            PASSWORD:
-            <input
-              type="password"
-              style={{
-                padding: "15px",
-                backgroundColor: "teal",
-                borderRadius: "20px"
-              }}
-            />
-            <br />
-            <br />
-            <button onHandleSubmit={this.handleSubmit} onClick={this.onClick}>
+            <div className="input">
+              <input
+                type="text"
+                placeholder="FULLNAME/COMPANYNAME"
+                name="fullname"
+                className="input"
+                // value={this.state.value}
+                // onChange={this.handleChange}
+              />
+              <br />
+              <br />
+              <input
+                className="input"
+                placeholder=" ADDRESS"
+                name="address"
+                type="text"
+              />
+              <br />
+              <br />
+
+              <input
+                className="input"
+                name="email"
+                type="text"
+                placeholder=" EMAIL"
+              />
+              <br />
+              <br />
+              <input
+                type="number"
+                placeholder="  PHONENUMBER"
+                name="phoneNumber"
+                className="input"
+              />
+              <br />
+              <br />
+
+              <input
+                type="password"
+                placeholder="   PASSWORD"
+                name="password"
+                className="input"
+              />
+            </div>
+
+            <button
+              onHandleSubmit={this.handleSubmit}
+              onClick={this.onClick}
+              // class="btn btn-primary btn-lg"
+              className="inputButton"
+            >
               SUBMIT
             </button>
           </form>

@@ -24,8 +24,9 @@ router.post("/signup", (req, res, next) => {
           } else {
             const user = new User({
               _id: new mongoose.Types.ObjectId(),
-              FirstName: req.body.FirstName,
-              LastName: req.body.LastName,
+              fullName: req.body.fullName,
+              companyName: req.body.companyName,
+              phoneNumber: req.body.phoneNumber,
               Email: req.body.Email,
               Password: hash
             });
@@ -71,7 +72,7 @@ router.post("/login", (req, res, next) => {
             {
               isActive: user[0].isActive,
               userId: user[0]._id,
-              name: user[0].FirstName
+              name: user[0].fullName
             },
             process.env.JWT_KEY,
             {
@@ -79,12 +80,12 @@ router.post("/login", (req, res, next) => {
             }
           );
           return res.status(200).json({
-            message: "Auth Succesful",
+            message: "Good to go",
             token: token
           });
         }
         res.status(401).json({
-          message: "no match password"
+          message: "wrong password"
         });
       });
     })

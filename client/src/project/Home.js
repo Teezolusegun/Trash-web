@@ -24,10 +24,50 @@ class Home extends Component {
             clean so sign up with us today!
           </h4>
           <div>
-            <h3 className="writ">would you rather have this</h3>
-            <img className="street" />
-          </div>
+            <spring
+              from={{ opacity: 0 }}
+              to={{ opacity: 2 }}
+              config={{ delay: 2000, duration: 4000 }}
+            >
+              {props => (
+                <div style={props}>
+                  <div
+                    style={{
+                      background: "steelblue",
+                      color: "white",
+                      padding: "1.5rem"
+                    }}
+                  >
+                    <h2 className="writ">Would you rather have this</h2>
+                  </div>
+                </div>
+              )}
+            </spring>
 
+            <img className="street" />
+            <spring
+              from={{ opacity: 0 }}
+              to={{ opacity: 2 }}
+              config={{ delay: 2000, duration: 4000 }}
+            >
+              {props => (
+                <div style={props}>
+                  <div
+                    style={{
+                      background: "steelblue",
+                      color: "white",
+                      padding: "1.5rem"
+                    }}
+                  >
+                    <h2 className="writ">OR This</h2>
+                  </div>
+                </div>
+              )}
+            </spring>
+
+            <img className="street2" />
+          </div>
+          <br />
           <br />
           <h4>
             Why not register with us today and let us take away your Garbage

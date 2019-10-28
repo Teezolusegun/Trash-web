@@ -3,29 +3,23 @@ import { Link, NavLink } from "react-router-dom";
 import "../App.css";
 import headStyles from "../styles/head.module.css";
 import logo3 from "../assets/trashlogo.png";
+import AboutUs from "./AboutUs";
+import ContactUs from "./ContactUs";
+import Career from "./Career";
 
 const Header = props => {
   return (
     <div className={headStyles.headerContainer}>
-      <div
-        style={{
-          borderColor: "red",
-          borderWidth: "75px",
-          borderRadius: "55px",
-          width: "17%",
-          backgroundColor: "#47608d",
-          textAlign: "center"
-        }}
-      >
-        <img src={logo3} width="70%" />
+      <div className={headStyles.headerContainer2}>
+        <img src={logo3} />
       </div>
-      <h2>{props.title || "header"}</h2>
-      <div>
-        
-      </div>
-      <ul>
-      
-      </ul>
+      <h1>{props.title || "TrashIt"}</h1>
+      <div></div>
+      {/* <ul>
+        <AboutUs />
+        <ContactUs />
+        <Career />
+      </ul> */}
     </div>
   );
 };

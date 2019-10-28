@@ -1,15 +1,16 @@
 .headerContainer {
-  background: #a0ced9;
+  background: #000e29;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 20px;
+  list-style: none;
 }
 
 .headerContainer h1 {
-  color: cornsilk;
-  padding-left: 50px;
+  color: aliceblue;
+  padding-left: 0px;
 }
 
 .headerContainer ul {
@@ -27,8 +28,8 @@
   text-decoration: khaki;
 }
 .headerContainer ul li a:hover {
-  color: blue;
-  font-size: 4 rem;
+  color: red;
+  font-size: 8 rem;
 }
 
 .headerContainer2 img {

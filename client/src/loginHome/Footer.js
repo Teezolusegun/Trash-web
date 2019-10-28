@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import "../App.css";
 
 class Footer extends Component {
   render() {
     return (
-      <div style={{ backgroundColor: "#a0ced9" }}>
-        <div className="Ontopme">
-          <h1>TrashIt: Your No. 1 garbage Destination</h1>
+      <div className={headStyles.footerContainer}>
+        <div className={headStyles.footerContainer2}>
+          <h1>Trash It: Your No. 1 garbage Destination</h1>
           <p>
             TrashIt is your number one online garbage site in Nigeria. We are an
             online garbage site where we create avenue for you to dispose your

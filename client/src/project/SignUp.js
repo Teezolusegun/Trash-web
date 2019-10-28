@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import signinup from "../styles/signinup.module.css";
-import button from "../styles/button.module.css";
+import { Redirect, Link } from "react-router-dom";
 
 class SignUp extends Component {
   state = {
@@ -22,11 +21,10 @@ class SignUp extends Component {
   handleSubmit = () => {
     const url = "http://localhost:4000/user/signIn";
     const { fullName, password, phoneNumber, email } = this.state;
-    const namebrk = fullName.split(" ");
+    const namebrk = fullName.push(" ");
 
     const data = {
-      FirstName: namebrk[0],
-      LastName: namebrk[1],
+      fullName: namebrk,
       Email: email,
       Password: password
     };
@@ -45,16 +43,18 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        <Header title="SignUp/Register with us" />
-        <div className={signinup.signContainer}>
-          <div className="signUp">
+        <Header title="SignUp/Register" />
+        <br />
+        <br />
+        <div className="signUpContainer">
+          <div>
+            <h1 style={{ marginLeft: "10px" }}>Sign Up/Create Account</h1>
+            <br />
             <div>
-              <h2>Sign Up/Create Account</h2>
-            </div>
-            <div className="input">
               <input
                 placeholder="FullName or CompanyName"
                 onChange={this.handleChange}
+                className="signUp"
                 name="fullName"
                 type="text"
               />
@@ -63,6 +63,7 @@ class SignUp extends Component {
               <input
                 placeholder="Address"
                 onChange={this.handleChange}
+                className="signUp"
                 name="Address"
                 type="text"
               />
@@ -71,6 +72,7 @@ class SignUp extends Component {
               <input
                 placeholder="E-mail"
                 onChange={this.handleChange}
+                className="signUp"
                 name="email"
                 type="text"
               />
@@ -79,6 +81,7 @@ class SignUp extends Component {
               <input
                 placeholder="Password"
                 onChange={this.handleChange}
+                className="signUp"
                 name="password"
                 type="password"
               />
@@ -87,6 +90,7 @@ class SignUp extends Component {
               <input
                 placeholder="(+234)Phone number"
                 onChange={this.handleChange}
+                className="signUp"
                 name="phoneNumber"
                 type="number/text"
               />
@@ -102,27 +106,32 @@ class SignUp extends Component {
                   <br />
                 </div>
                 <br />
-                <br />
-                <div>OR</div>
-                <br />
-                <br />
-                <div>
-                  <button className="btn2">REGISTER WITH FACEBOOK</button>
-                </div>
-                <div>
-                  <p>Already have an account?</p>
 
-                  <p>
-                    <a href="#" className="lara">
+                <h3>OR</h3>
+
+                <br />
+
+                <Link to="www.facebook.com">
+                  <button className="btn2">REGISTER WITH FACEBOOK</button>
+                </Link>
+                <br />
+                <br />
+                <div>
+                  <h5>Already have an account?</h5>
+                  <br />
+                  <h4>
+                    <a href="/SignIn" className="btn2">
                       LOGIN
                     </a>
-                  </p>
+                  </h4>
+                  <br />
+                  <br />
                 </div>
               </div>
             </div>
-            <Footer />
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

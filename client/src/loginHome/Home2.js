@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import pic from "../assets/cleanstreet.jpg";
-import pic1 from "../assets/dirtystreet.jpg";
+import pic from "../assets/home.jpg";
+import buttonStyles from "../styles/button.module.css";
 import Footer from "./Footer";
 
 class LoginHome extends Component {
@@ -10,19 +10,23 @@ class LoginHome extends Component {
       <div>
         <div>
           <Header title="TRASH IT" />
-          <h5>Choose from the options below</h5>
+          <br />
+          <br />
+          <h3>Choose from the options below</h3>
         </div>
-        <div>
-          <button style={{ backgroundColor: "orange" }}>Domestic Waste</button>
+        <div className={buttonStyles.buttonContainer}>
+          <button className={buttonStyles.buttonContainer}>
+            Domestic Waste
+          </button>
           <button style={{ backgroundColor: "brown" }}>Commercial Waste</button>
           <button style={{ backgroundColor: "yellow" }}>
             Industrial Waste
           </button>
         </div>
         <h1>The best time to dispose that Trash is Now!</h1>
-        <p>Cleaniness is next to Godliness</p>
+        <h4>Cleaniness is next to Godliness</h4>
         <img src={pic} />
-        <img src={pic1} />
+        <p>Imploy us and you will be glad you did</p>
         <Footer />
       </div>
     );

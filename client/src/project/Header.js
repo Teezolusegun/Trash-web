@@ -13,7 +13,7 @@ const Header = props => {
       </div>
       <h1>{props.title || "header"}</h1>
       <div>
-        <Button2 />
+        <Button />
       </div>
     </div>
   );
