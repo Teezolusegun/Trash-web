@@ -19,14 +19,14 @@ class SignUp extends Component {
   };
 
   handleSubmit = () => {
-    const url = "http://localhost:4000/user/signIn";
+    const url = "http://localhost:4000/user/signup";
     const { fullName, password, phoneNumber, email } = this.state;
-    const namebrk = fullName.push(" ");
 
     const data = {
-      fullName: namebrk,
+      fullName: fullName,
       Email: email,
-      Password: password
+      Password: password,
+      phoneNumber: phoneNumber
     };
     fetch(url, {
       method: "POST",
@@ -36,7 +36,9 @@ class SignUp extends Component {
       body: JSON.stringify(data)
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => {
+        console.log(data);
+      })
       .catch(err => console.log(err));
   };
 

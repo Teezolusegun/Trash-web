@@ -8,8 +8,8 @@ import Router2 from "./Router/Router2";
 import Home from "../src/project/Home";
 import LoginHome from "../src/loginHome/Home2";
 import * as serviceWorker from "./serviceWorker";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(<Router2 />, document.getElementById("root"));
 

@@ -1,32 +1,35 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import pic from "../assets/home.jpg";
-import buttonStyles from "../styles/button.module.css";
+// import buttonStyles from "../styles/home.module.css";
 import Footer from "./Footer";
+import "../App.css";
 
 class LoginHome extends Component {
   render() {
     return (
       <div>
-        <div>
-          <Header title="TRASH IT" />
-          <br />
-          <br />
+        <Header title="TRASH IT" />
+        <br />
+        <br />
+        <div className="container">
+          <h1>The best time to dispose that Trash is Now!</h1>
           <h3>Choose from the options below</h3>
         </div>
-        <div className={buttonStyles.buttonContainer}>
-          <button className={buttonStyles.buttonContainer}>
-            Domestic Waste
-          </button>
-          <button style={{ backgroundColor: "brown" }}>Commercial Waste</button>
-          <button style={{ backgroundColor: "yellow" }}>
-            Industrial Waste
-          </button>
+        <br />
+        <div className="btncontainer">
+          <button className="btnd">Domestic Waste</button>
+          <button className="btnc">Commercial Waste</button>
+          <button className="btni">Industrial Waste</button>
         </div>
-        <h1>The best time to dispose that Trash is Now!</h1>
-        <h4>Cleaniness is next to Godliness</h4>
-        <img src={pic} />
-        <p>Imploy us and you will be glad you did</p>
+        <div style={{ padding: "3%" }}>
+          <img src={pic} width="90%" height="500px" />
+          <p>
+            ...... Home sweet Home. Made possible by TrashIt; Implore us and you
+            will be glad you did
+          </p>
+        </div>
+
         <Footer />
       </div>
     );

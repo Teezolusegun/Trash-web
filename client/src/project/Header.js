@@ -11,7 +11,7 @@ const Header = props => {
       <div className={headStyles.headerContainer2}>
         <img src={logo3} alt="greet" />
       </div>
-      <h1>{props.title || "header"}</h1>
+      <h1>{props.title || "Trash It"}</h1>
       <div>
         <Button />
       </div>
