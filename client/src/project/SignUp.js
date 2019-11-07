@@ -7,24 +7,32 @@ import { Redirect, Link } from "react-router-dom";
 class SignUp extends Component {
   state = {
     fullName: "",
+    address: "",
+    companyName: "",
     password: "",
     phoneNumber: "",
     email: ""
   };
   handleChange = ({ target }) => {
+    
     const { name, value } = target;
     this.setState({
       [name]: value
     });
+  
+
   };
 
   handleSubmit = () => {
-    const url = "http://localhost:4000/user/signIn";
-    const { fullName, password, phoneNumber, email } = this.state;
-    const namebrk = fullName.push(" ");
+    const url = "http://localhost:4000/user/signup";
+    const { fullName, password, phoneNumber, email, companyName, address } = this.state;
+    
 
     const data = {
-      fullName: namebrk,
+      FullName: fullName,
+      Address: address,
+      CompanyName: companyName ,
+      PhoneNumber: phoneNumber,
       Email: email,
       Password: password
     };
@@ -35,14 +43,27 @@ class SignUp extends Component {
       },
       body: JSON.stringify(data)
     })
-      .then(res => res.json())
-      .then(data => console.log(data))
+     .then(res => res.json())
+      .then(result => {
+      console.log(result)
+      this.setState({
+        fullName: "",
+        address: "",
+        companyName: "",
+        password: "",
+        phoneNumber: "",
+        email: ""
+      })
+      })
       .catch(err => console.log(err));
+      
   };
 
   render() {
     return (
+      
       <div>
+      
         <Header title="SignUp/Register" />
         <br />
         <br />
@@ -52,11 +73,12 @@ class SignUp extends Component {
             <br />
             <div>
               <input
-                placeholder="FullName or CompanyName"
+                placeholder="FullName"
                 onChange={this.handleChange}
                 className="signUp"
                 name="fullName"
                 type="text"
+                value={this.state.fullName}
               />
               <br />
               <br />
@@ -64,8 +86,19 @@ class SignUp extends Component {
                 placeholder="Address"
                 onChange={this.handleChange}
                 className="signUp"
-                name="Address"
+                name="address"
                 type="text"
+                value={this.state.address}
+              />
+              <br />
+              <br />
+              <input
+                placeholder="companyName"
+                onChange={this.handleChange}
+                className="signUp"
+                name="companyName"
+                type="text"
+                value={this.state.companyName}
               />
               <br />
               <br />
@@ -75,6 +108,7 @@ class SignUp extends Component {
                 className="signUp"
                 name="email"
                 type="text"
+                value={this.state.email}
               />
               <br />
               <br />
@@ -84,6 +118,7 @@ class SignUp extends Component {
                 className="signUp"
                 name="password"
                 type="password"
+                value={this.state.password}
               />
               <br />
               <br />
@@ -93,6 +128,7 @@ class SignUp extends Component {
                 className="signUp"
                 name="phoneNumber"
                 type="number/text"
+                value={this.state.phoneNumber}
               />
               <br />
               <br />

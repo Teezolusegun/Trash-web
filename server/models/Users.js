@@ -3,15 +3,19 @@ const bcrypt = require("bcrypt");
 
 const userSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  fullName: {
+  FullName: {
     type: String,
     required: true
   },
-  companyName: {
+  Address:{
+    type:String,
+    required:true
+  },
+  CompanyName: {
     type: String,
     required: true
   },
-  email: {
+  Email: {
     type: String,
     require: true,
     unique: true

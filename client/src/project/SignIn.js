@@ -2,27 +2,56 @@ import React, { Component } from "react";
 import "../App.css";
 import Footer from "./Footer";
 import Header from "./Header";
+import  {Redirect} from "react-router-dom"
 import buttonStyles from "../styles/button.module.css";
 
 class SignIn extends React.Component {
-  state = { value: "" };
+  state = { 
+    fullname: "",
+    email:"",
+    password:""
+ };
 
-  onClick(event) {
-    const url = "http://localhost:4000/user/Home2";
-    const { fullName, password, phoneNumber, email } = this.state;
-    const namebrk = fullName.split(" ");
-    if (this.state == event.target.value) {
-    }
+  handleChange =({target})=>{
+      const { name, value } = target;
+      this.setState({
+        [name]: value
+      });
+    
   }
 
-  handleSubmit(event) {
-    alert("Welcome");
-    event.preventDefault();
+  handleSubmit = (e)=>{
+    const url = "http://localhost:4000/user/login";
+    const {fullname, email, password}= this.state
+    const data = {
+    Email:email,
+    Password: password
+    }
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    }) .then(res => res.json())
+    .then(result => {
+    console.log(result)
+    this.props.history.push("/User")
+    this.setState({
+      fullName: "",
+      password: "",
+      email: ""
+    })
+  
+    })
+    .catch(err => console.log(err));
+    e.preventDefault()
   }
 
   render() {
     return (
       <div>
+       
         <Header title="SignIn/Login" />
 
         <div className="signIn">
@@ -33,53 +62,40 @@ class SignIn extends React.Component {
                 placeholder="FULLNAME/COMPANYNAME"
                 name="fullname"
                 className="input"
-                // value={this.state.value}
-                // onChange={this.handleChange}
+             onChange={this.handleChange}
+             value={this.state.fullname}
               />
               <br />
               <br />
-              <input
-                className="input"
-                placeholder=" ADDRESS"
-                name="address"
-                type="text"
-              />
-              <br />
-              <br />
+              
 
               <input
                 className="input"
                 name="email"
                 type="text"
                 placeholder=" EMAIL"
+                onChange={this.handleChange}
+                value={this.state.email}
               />
               <br />
               <br />
-              <input
-                type="number"
-                placeholder="  PHONENUMBER"
-                name="phoneNumber"
-                className="input"
-              />
-              <br />
-              <br />
+              
 
               <input
                 type="password"
                 placeholder="   PASSWORD"
                 name="password"
                 className="input"
+                onChange={this.handleChange}
+                value={this.state.password}
               />
             </div>
-
-            <button
-              onHandleSubmit={this.handleSubmit}
-              onClick={this.onClick}
-              // class="btn btn-primary btn-lg"
-              className="inputButton"
-            >
-              SUBMIT
-            </button>
+<input type="submit"
+placeholder="Submit"
+name="submit"
+className="inputButton"
+/>
+           
           </form>
         </div>
         <Footer />
